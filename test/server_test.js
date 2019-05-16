@@ -99,6 +99,8 @@ describe('server', () => {
             done(error);
             return;
           }
+          debugger
+          console.log(' decrypted response text! ',decrypt(response.text))
           let result = JSON.parse(decrypt(response.text));
           result.should.be.a('object');
           result.should.eql({id: 1, message: "This is a test message."});
